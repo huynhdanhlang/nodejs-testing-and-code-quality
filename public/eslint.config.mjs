@@ -1,6 +1,6 @@
 import { defineConfig } from "eslint/config";
 import globals from "globals";
-
+// It is extended from root/eslint.config.mjs
 export default defineConfig([
   {
     languageOptions: {
