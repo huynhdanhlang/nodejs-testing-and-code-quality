@@ -1,5 +1,5 @@
-import { defineConfig } from "eslint/config";
-import globals from "globals";
+const { defineConfig } = require("eslint/config");
+const globals = require("globals");
 // It is extended from root/eslint.config.mjs
 export default defineConfig([
   {
