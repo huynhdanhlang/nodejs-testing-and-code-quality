@@ -29,6 +29,10 @@ This project uses EditorConfig to standardize text editor configuration. Visit h
 
 This project uses ESLint to detect suspicious code in Javascript files. Visit https://eslint.org for details.
 
+### Testing
+
+This project uses Jest for testing. Visit https://jestjs.io for details. To execute tests run: `npm run test`
+
 ### Debugging
 
 This project uses https://www.npmjs.com/package/debug for development logging. To start `nodemon` and enable logging:
