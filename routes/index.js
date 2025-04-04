@@ -1,12 +1,9 @@
-const express = require('express');
-const router = express.Router();
+const { Router } = require("express");
 
-router.get('/', function(req, res, next) { // eslint-disable-line no-unused-vars
-  res.render('index', { title: 'Nadia\'s Garden' });
-});
+const router = Router();
 
-router.delete('/', function(req, res, next) { // eslint-disable-line no-unused-vars
-  res.end(500);
-});
+router.use(require("./admin"));
+router.use(require("./reservations"));
+router.use(require("./homepage"));
 
 module.exports = router;
