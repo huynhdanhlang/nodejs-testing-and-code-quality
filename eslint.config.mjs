@@ -17,15 +17,16 @@ export default defineConfig([
   {
     extends: [
       ...compat.extends("eslint:recommended"),
-      // {
-      //   ignores: ["public/contrib/*"],
-      // },
+      {
+        ignores: ["public/contrib/*"],
+      },
     ],
 
     languageOptions: {
       globals: {
         ...globals.node,
         ...globals.es2020,
+        ...globals.jest,
       },
     },
 

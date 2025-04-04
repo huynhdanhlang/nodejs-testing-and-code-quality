@@ -4,12 +4,8 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 
-const index = require('./routes/index');
-const admin = require('./routes/admin');
-const reservations = require('./routes/reservations');
-
 const auth = require('./lib/middleware/auth.js');
-
+const routes = require('./routes');
 const app = express();
 
 // Static assets.
@@ -27,13 +23,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use('/', index);
-
 // Impenetrable security.
 app.use('/admin', auth('admin', 'admin'))
-app.use('/admin', admin);
-
-app.use('/reservations', reservations);
+app.use(routes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
